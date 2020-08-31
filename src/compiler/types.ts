@@ -113,6 +113,18 @@ namespace ts {
         BarbarPoleEmoji,
         BackhandIndexPointingRightEmoji,
         PersonBowingEmoji,
+        PlusEmoji,
+        MinusEmoji,
+        MultiplyEmoji,
+        DivideEmoji,
+        PizzaEmoji,
+        HandshakeEmoji,
+        LastTrackButtonEmoji,
+        FastReverseButtonEmoji,
+        FastForwardButtonEmoji,
+        NextTrackButtonEmoji,
+        BirthdayCakeEmoji,
+
 
         // Identifiers and PrivateIdentifiers
         Identifier,
@@ -649,6 +661,17 @@ namespace ts {
         | SyntaxKind.BarbarPoleEmoji
         | SyntaxKind.BackhandIndexPointingRightEmoji
         | SyntaxKind.PersonBowingEmoji
+        | SyntaxKind.PlusEmoji
+        | SyntaxKind.MinusEmoji
+        | SyntaxKind.MultiplyEmoji
+        | SyntaxKind.DivideEmoji
+        | SyntaxKind.PizzaEmoji
+        | SyntaxKind.HandshakeEmoji
+        | SyntaxKind.LastTrackButtonEmoji
+        | SyntaxKind.FastReverseButtonEmoji
+        | SyntaxKind.FastForwardButtonEmoji
+        | SyntaxKind.NextTrackButtonEmoji
+        | SyntaxKind.BirthdayCakeEmoji
         ;
 
     /* @internal */

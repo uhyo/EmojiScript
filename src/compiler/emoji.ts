@@ -12,6 +12,28 @@ namespace ts {
         "\u{1f449}": SyntaxKind.BackhandIndexPointingRightEmoji,
         // 🙇
         "\u{1f647}": SyntaxKind.PersonBowingEmoji,
+        // ➕
+        "\u2795": SyntaxKind.PlusEmoji,
+        // ➖
+        "\u2796": SyntaxKind.MinusEmoji,
+        // ✖️
+        "\u2716": SyntaxKind.MultiplyEmoji,
+        // ➗
+        "\u2797": SyntaxKind.DivideEmoji,
+        // 🍕
+        "\u{1f355}": SyntaxKind.PizzaEmoji,
+        // 🤝
+        "\u{1f91d}": SyntaxKind.HandshakeEmoji,
+        // ⏮️
+        "\u23ee": SyntaxKind.LastTrackButtonEmoji,
+        // ⏪
+        "\u23ea": SyntaxKind.FastReverseButtonEmoji,
+        // ⏩
+        "\u23e9": SyntaxKind.FastForwardButtonEmoji,
+        // ⏭️
+        "\u23ed": SyntaxKind.NextTrackButtonEmoji,
+        // 🎂
+        "\u{1f382}": SyntaxKind.BirthdayCakeEmoji
     };
 
     /**
@@ -23,7 +45,18 @@ namespace ts {
         [SyntaxKind.ScrollEmoji, SyntaxKind.FunctionKeyword],
         [SyntaxKind.BarbarPoleEmoji, SyntaxKind.ForKeyword],
         [SyntaxKind.BackhandIndexPointingRightEmoji, SyntaxKind.LetKeyword],
-        [SyntaxKind.PersonBowingEmoji, SyntaxKind.SemicolonToken]
+        [SyntaxKind.PersonBowingEmoji, SyntaxKind.SemicolonToken],
+        [SyntaxKind.PlusEmoji, SyntaxKind.PlusToken],
+        [SyntaxKind.MinusEmoji, SyntaxKind.MinusToken],
+        [SyntaxKind.MultiplyEmoji, SyntaxKind.AsteriskToken],
+        [SyntaxKind.DivideEmoji, SyntaxKind.SlashToken],
+        [SyntaxKind.PizzaEmoji, SyntaxKind.PercentToken],
+        [SyntaxKind.HandshakeEmoji, SyntaxKind.EqualsEqualsEqualsToken],
+        [SyntaxKind.LastTrackButtonEmoji, SyntaxKind.LessThanEqualsToken],
+        [SyntaxKind.FastReverseButtonEmoji, SyntaxKind.LessThanToken],
+        [SyntaxKind.FastForwardButtonEmoji, SyntaxKind.GreaterThanToken],
+        [SyntaxKind.NextTrackButtonEmoji, SyntaxKind.GreaterThanEqualsToken],
+        [SyntaxKind.BirthdayCakeEmoji, SyntaxKind.PlusPlusToken]
     ]);
 
     const charCodeToTokenObj = new Map(
@@ -40,7 +73,8 @@ namespace ts {
         [
             SyntaxKind.PersonShruggingEmoji,
             SyntaxKind.BackhandIndexPointingRightEmoji,
-            SyntaxKind.PersonBowingEmoji
+            SyntaxKind.PersonBowingEmoji,
+            SyntaxKind.HandshakeEmoji
         ]
     );
     /* @internal */
@@ -57,6 +91,16 @@ namespace ts {
     /* @internal */
     export function isGenderedEmojiToken(token: SyntaxKind): boolean {
         return genderedEmojiTokenSet.has(token);
+    }
+
+    const hasVariationTokenSet = new Set<SyntaxKind>([
+        SyntaxKind.MultiplyEmoji,
+        SyntaxKind.LastTrackButtonEmoji,
+        SyntaxKind.NextTrackButtonEmoji,
+    ]);
+    /* @internal */
+    export function isVariationEmojiToken(token: SyntaxKind): boolean {
+        return hasVariationTokenSet.has(token);
     }
 
     /**
@@ -93,6 +137,14 @@ namespace ts {
                         }
                         continue;
                     }
+                }
+            }
+            // Scan variation selector 16
+            if (isVariationEmojiToken(token)) {
+                const ch = codePointAt(text, pos);
+                if (ch === 0xfe0f) {
+                    pos++;
+                    continue;
                 }
             }
             break;
