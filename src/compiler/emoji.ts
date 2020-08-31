@@ -33,7 +33,15 @@ namespace ts {
         // ⏭️
         "\u23ed": SyntaxKind.NextTrackButtonEmoji,
         // 🎂
-        "\u{1f382}": SyntaxKind.BirthdayCakeEmoji
+        "\u{1f382}": SyntaxKind.BirthdayCakeEmoji,
+        // 🕳️
+        "\u{1f573}": SyntaxKind.HoleEmoji,
+        // 📰
+        "\u{1f4f0}": SyntaxKind.NewspaperEmoji,
+        // 📊
+        "\u{1f4ca}": SyntaxKind.BarChartEmoji,
+        // ☯️
+        "\u262f": SyntaxKind.YinYangEmoji,
     };
 
     /**
@@ -56,7 +64,11 @@ namespace ts {
         [SyntaxKind.FastReverseButtonEmoji, SyntaxKind.LessThanToken],
         [SyntaxKind.FastForwardButtonEmoji, SyntaxKind.GreaterThanToken],
         [SyntaxKind.NextTrackButtonEmoji, SyntaxKind.GreaterThanEqualsToken],
-        [SyntaxKind.BirthdayCakeEmoji, SyntaxKind.PlusPlusToken]
+        [SyntaxKind.BirthdayCakeEmoji, SyntaxKind.PlusPlusToken],
+        [SyntaxKind.HoleEmoji, SyntaxKind.VoidKeyword],
+        [SyntaxKind.NewspaperEmoji, SyntaxKind.StringKeyword],
+        [SyntaxKind.BarChartEmoji, SyntaxKind.NumberKeyword],
+        [SyntaxKind.YinYangEmoji, SyntaxKind.BooleanKeyword]
     ]);
 
     const charCodeToTokenObj = new Map(
@@ -97,6 +109,8 @@ namespace ts {
         SyntaxKind.MultiplyEmoji,
         SyntaxKind.LastTrackButtonEmoji,
         SyntaxKind.NextTrackButtonEmoji,
+        SyntaxKind.HoleEmoji,
+        SyntaxKind.YinYangEmoji,
     ]);
     /* @internal */
     export function isVariationEmojiToken(token: SyntaxKind): boolean {

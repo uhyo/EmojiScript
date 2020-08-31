@@ -6,7 +6,7 @@ A fork of [TypeScript](https://www.typescriptlang.org/) with Emoji support.
 ## Example
 
 ```ts
-📜fizzbuzz(n: number): void {
+📜fizzbuzz(n: 📊): 🕳️ {
   💈(👉🏻i = 0; i⏮️n; i🎂) {
     🤔(i🍕15 🤝 0) {
       console.log("FizzBuzz")🙇‍♂️

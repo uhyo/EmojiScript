@@ -124,6 +124,10 @@ namespace ts {
         FastForwardButtonEmoji,
         NextTrackButtonEmoji,
         BirthdayCakeEmoji,
+        HoleEmoji,
+        NewspaperEmoji,
+        BarChartEmoji,
+        YinYangEmoji,
 
 
         // Identifiers and PrivateIdentifiers
@@ -672,6 +676,10 @@ namespace ts {
         | SyntaxKind.FastForwardButtonEmoji
         | SyntaxKind.NextTrackButtonEmoji
         | SyntaxKind.BirthdayCakeEmoji
+        | SyntaxKind.HoleEmoji
+        | SyntaxKind.NewspaperEmoji
+        | SyntaxKind.BarChartEmoji
+        | SyntaxKind.YinYangEmoji
         ;
 
     /* @internal */
