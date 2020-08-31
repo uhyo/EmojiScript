@@ -22,6 +22,8 @@
         "sys.ts",
         "path.ts",
         "diagnosticInformationMap.generated.ts",
+        "codePointAt.ts",
+        "emoji.ts",
         "scanner.ts",
         "utilitiesPublic.ts",
         "utilities.ts",

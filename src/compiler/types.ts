@@ -105,6 +105,15 @@ namespace ts {
         AmpersandAmpersandEqualsToken,
         QuestionQuestionEqualsToken,
         CaretEqualsToken,
+
+        // EmojiScript Tokens
+        ThinkingFaceEmoji,
+        PersonShruggingEmoji,
+        ScrollEmoji,
+        BarbarPoleEmoji,
+        BackhandIndexPointingRightEmoji,
+        PersonBowingEmoji,
+
         // Identifiers and PrivateIdentifiers
         Identifier,
         PrivateIdentifier,
@@ -631,6 +640,15 @@ namespace ts {
         | SyntaxKind.UndefinedKeyword
         | SyntaxKind.UnknownKeyword
         | SyntaxKind.VoidKeyword
+        ;
+
+    export type EmojiSyntaxKind =
+        | SyntaxKind.ThinkingFaceEmoji
+        | SyntaxKind.PersonShruggingEmoji
+        | SyntaxKind.ScrollEmoji
+        | SyntaxKind.BarbarPoleEmoji
+        | SyntaxKind.BackhandIndexPointingRightEmoji
+        | SyntaxKind.PersonBowingEmoji
         ;
 
     /* @internal */
