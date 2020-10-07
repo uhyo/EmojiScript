@@ -128,6 +128,7 @@ namespace ts {
         NewspaperEmoji,
         BarChartEmoji,
         YinYangEmoji,
+        DoubleExclamationEmoji,
 
 
         // Identifiers and PrivateIdentifiers
@@ -275,6 +276,7 @@ namespace ts {
         DeleteExpression,
         TypeOfExpression,
         VoidExpression,
+        BooleanCoerceExpression,
         AwaitExpression,
         PrefixUnaryExpression,
         PostfixUnaryExpression,
@@ -680,6 +682,7 @@ namespace ts {
         | SyntaxKind.NewspaperEmoji
         | SyntaxKind.BarChartEmoji
         | SyntaxKind.YinYangEmoji
+        | SyntaxKind.DoubleExclamationEmoji
         ;
 
     /* @internal */
@@ -1728,7 +1731,8 @@ namespace ts {
         | SyntaxKind.PlusToken
         | SyntaxKind.MinusToken
         | SyntaxKind.TildeToken
-        | SyntaxKind.ExclamationToken;
+        | SyntaxKind.ExclamationToken
+        | SyntaxKind.DoubleExclamationEmoji;
 
     export interface PrefixUnaryExpression extends UpdateExpression {
         readonly kind: SyntaxKind.PrefixUnaryExpression;
@@ -1800,6 +1804,12 @@ namespace ts {
         readonly kind: SyntaxKind.VoidExpression;
         readonly expression: UnaryExpression;
     }
+
+    export interface BooleanCoerceExpression extends UnaryExpression {
+        readonly kind: SyntaxKind.BooleanCoerceExpression;
+        readonly expression: UnaryExpression;
+    }
+
 
     export interface AwaitExpression extends UnaryExpression {
         readonly kind: SyntaxKind.AwaitExpression;

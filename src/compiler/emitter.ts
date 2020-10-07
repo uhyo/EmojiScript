@@ -2433,7 +2433,13 @@ namespace ts {
         }
 
         function emitPrefixUnaryExpression(node: PrefixUnaryExpression) {
-            writeTokenText(node.operator, writeOperator);
+            if (node.operator === SyntaxKind.DoubleExclamationEmoji) {
+                writeOperator("!!");
+            }
+            else {
+                writeTokenText(node.operator, writeOperator);
+            }
+
             if (shouldEmitWhitespaceBeforeOperand(node)) {
                 writeSpace();
             }

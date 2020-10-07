@@ -28917,11 +28917,19 @@ namespace ts {
                     }
                     return getUnaryResultType(operandType);
                 case SyntaxKind.ExclamationToken:
+                case SyntaxKind.DoubleExclamationEmoji:
                     checkTruthinessExpression(node.operand);
                     const facts = getTypeFacts(operandType) & (TypeFacts.Truthy | TypeFacts.Falsy);
-                    return facts === TypeFacts.Truthy ? falseType :
-                        facts === TypeFacts.Falsy ? trueType :
-                        booleanType;
+                    if (node.operator === SyntaxKind.ExclamationToken) {
+                        return facts === TypeFacts.Truthy ? falseType :
+                            facts === TypeFacts.Falsy ? trueType :
+                            booleanType;
+                    }
+                    else {
+                        return facts === TypeFacts.Truthy ? trueType :
+                            facts === TypeFacts.Falsy ? falseType :
+                            booleanType;
+                    }
                 case SyntaxKind.PlusPlusToken:
                 case SyntaxKind.MinusMinusToken:
                     const ok = checkArithmeticOperandType(node.operand, checkNonNullType(operandType, node.operand),

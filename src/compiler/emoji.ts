@@ -42,6 +42,8 @@ namespace ts {
         "\u{1f4ca}": SyntaxKind.BarChartEmoji,
         // ☯️
         "\u262f": SyntaxKind.YinYangEmoji,
+        // ‼
+        "\u203c": SyntaxKind.DoubleExclamationEmoji,
     };
 
     /**
@@ -111,6 +113,7 @@ namespace ts {
         SyntaxKind.NextTrackButtonEmoji,
         SyntaxKind.HoleEmoji,
         SyntaxKind.YinYangEmoji,
+        SyntaxKind.DoubleExclamationEmoji
     ]);
     /* @internal */
     export function isVariationEmojiToken(token: SyntaxKind): boolean {

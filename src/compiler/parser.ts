@@ -3779,6 +3779,7 @@ namespace ts {
                 case SyntaxKind.DeleteKeyword:
                 case SyntaxKind.TypeOfKeyword:
                 case SyntaxKind.VoidKeyword:
+                case SyntaxKind.DoubleExclamationEmoji:
                 case SyntaxKind.PlusPlusToken:
                 case SyntaxKind.MinusMinusToken:
                 case SyntaxKind.LessThanToken:
@@ -4454,6 +4455,7 @@ namespace ts {
              *      3) LeftHandSideExpression[?Yield][no LineTerminator here]--
              *      4) ++UnaryExpression[?Yield]
              *      5) --UnaryExpression[?Yield]
+             *
              */
             if (isUpdateExpression()) {
                 const pos = getNodePos();
@@ -4473,6 +4475,9 @@ namespace ts {
              *      6) - UpdateExpression[?yield]
              *      7) ~ UpdateExpression[?yield]
              *      8) ! UpdateExpression[?yield]
+             *
+             *  EmojiScript:
+             *    ‼️UnaryExpression[?Yieid]
              */
             const unaryOperator = token();
             const simpleUnaryExpression = parseSimpleUnaryExpression();
@@ -4509,6 +4514,7 @@ namespace ts {
                 case SyntaxKind.MinusToken:
                 case SyntaxKind.TildeToken:
                 case SyntaxKind.ExclamationToken:
+                case SyntaxKind.DoubleExclamationEmoji:
                     return parsePrefixUnaryExpression();
                 case SyntaxKind.DeleteKeyword:
                     return parseDeleteExpression();
@@ -4552,6 +4558,7 @@ namespace ts {
                 case SyntaxKind.DeleteKeyword:
                 case SyntaxKind.TypeOfKeyword:
                 case SyntaxKind.VoidKeyword:
+                case SyntaxKind.DoubleExclamationEmoji:
                 case SyntaxKind.AwaitKeyword:
                     return false;
                 case SyntaxKind.LessThanToken:
