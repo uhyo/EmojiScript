@@ -8,11 +8,11 @@ A fork of [TypeScript](https://www.typescriptlang.org/) with Emoji support.
 ```ts
 📜fizzbuzz(n: 📊): 🕳️ {
   💈(👉🏻i = 0; i⏮️n; i🎂) {
-    🤔(i🍕15 🤝 0) {
+    🤔(i🍕⠏ 🤝 0) {
       console.log("FizzBuzz")🙇‍♂️
-    } 🤷🤔(i🍕3 🤝🏽 0) {
+    } 🤷🤔(i🍕⠃ 🤝🏽 0) {
       console.log("Fizz")🙇🏽‍♀️
-    } 🤷🏿‍♂️🤔(i🍕5 🤝🏿 0) {
+    } 🤷🏿‍♂️🤔(i🍕⠅ 🤝🏿 0) {
       console.log("Buzz")🙇🏿‍♀️
     } 🤷🏻‍♂️ {
       console.log(i)🙇🏼‍♂️
@@ -20,7 +20,7 @@ A fork of [TypeScript](https://www.typescriptlang.org/) with Emoji support.
   }
 }
 
-fizzbuzz(100)🙇‍♀️
+fizzbuzz(⠃⣨)🙇‍♀️
 ```
 
 ## Express Yourself with Code.

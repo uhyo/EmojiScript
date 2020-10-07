@@ -765,6 +765,7 @@ namespace ts {
             const node = createBaseLiteral<NumericLiteral>(SyntaxKind.NumericLiteral, typeof value === "number" ? value + "" : value);
             node.numericLiteralFlags = numericLiteralFlags;
             if (numericLiteralFlags & TokenFlags.BinaryOrOctalSpecifier) node.transformFlags |= TransformFlags.ContainsES2015;
+            if (numericLiteralFlags & TokenFlags.BrailleSpecifier) node.transformFlags |= TransformFlags.ContainsEmoji;
             return node;
         }
 

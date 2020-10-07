@@ -2137,9 +2137,11 @@ namespace ts {
         /* @internal */
         ContainsInvalidEscape = 1 << 11,    // e.g. `\uhello`
         /* @internal */
+        BrailleSpecifier = 1 << 12,
+        /* @internal */
         BinaryOrOctalSpecifier = BinarySpecifier | OctalSpecifier,
         /* @internal */
-        NumericLiteralFlags = Scientific | Octal | HexSpecifier | BinaryOrOctalSpecifier | ContainsSeparator,
+        NumericLiteralFlags = Scientific | Octal | HexSpecifier | BinaryOrOctalSpecifier | ContainsSeparator | BrailleSpecifier,
         /* @internal */
         TemplateLiteralLikeFlags = ContainsInvalidEscape,
     }
@@ -6158,6 +6160,9 @@ namespace ts {
         byteOrderMark = 0xFEFF,
         tab = 0x09,                   // \t
         verticalTab = 0x0B,           // \v
+
+        BrailleStart = 0x2800,
+        BrailleEnd = 0x28FF,
     }
 
     export interface ModuleResolutionHost {
@@ -6345,6 +6350,8 @@ namespace ts {
         ContainsDynamicImport = 1 << 21,
         ContainsClassFields = 1 << 22,
         ContainsPossibleTopLevelAwait = 1 << 23,
+
+        ContainsEmoji = 1 << 28,
 
         // Please leave this as 1 << 29.
         // It is the maximum bit we can set before we outgrow the size of a v8 small integer (SMI) on an x86 system.

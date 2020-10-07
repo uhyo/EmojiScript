@@ -1095,6 +1095,20 @@ namespace ts {
             }
         }
 
+        function scanBrailleLiteral(): { type: SyntaxKind, value: string } {
+            let result = 0;
+            while (true) {
+                const ch = text.charCodeAt(pos);
+                if (ch < CharacterCodes.BrailleStart || ch > CharacterCodes.BrailleEnd) {
+                    break;
+                }
+                result = result * 0x100 + ch - CharacterCodes.BrailleStart;
+                pos++;
+            }
+
+            return { type: SyntaxKind.NumericLiteral, value: "" + result };
+        }
+
         function checkForIdentifierStartAfterNumericLiteral(numericStart: number, isScientific?: boolean) {
             if (!isIdentifierStart(codePointAt(text, pos), languageVersion)) {
                 return;
@@ -2050,6 +2064,11 @@ namespace ts {
                                 tokenValue += scanIdentifierParts();
                             }
                             return token = getIdentifierToken();
+                        }
+                        else if (CharacterCodes.BrailleStart <= ch && ch <= CharacterCodes.BrailleEnd) {
+                            ({ type: token, value: tokenValue } = scanBrailleLiteral());
+                            tokenFlags |= TokenFlags.BrailleSpecifier;
+                            return token;
                         }
                         else if (emojiToken = toEmojiToken(ch)) {
                             pos += charSize(ch);
