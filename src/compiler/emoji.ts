@@ -46,6 +46,12 @@ namespace ts {
         "\u203c": SyntaxKind.DoubleExclamationEmoji,
         // 🈚
         "\u{1f21a}": SyntaxKind.JapaneseFreeOfChargeButtonEmoji,
+        // 👈
+        "\u{1f448}": SyntaxKind.BackhandIndexPointingLeftEmoji,
+        // 📥
+        "\u{1f4e5}": SyntaxKind.InboxTrayEmoji,
+        // 🏷️
+        "\u{1f3f7}": SyntaxKind.LabelEmoji,
     };
 
     /**
@@ -74,6 +80,9 @@ namespace ts {
         [SyntaxKind.BarChartEmoji, SyntaxKind.NumberKeyword],
         [SyntaxKind.YinYangEmoji, SyntaxKind.BooleanKeyword],
         [SyntaxKind.JapaneseFreeOfChargeButtonEmoji, SyntaxKind.NullKeyword],
+        [SyntaxKind.BackhandIndexPointingLeftEmoji, SyntaxKind.EqualsToken],
+        [SyntaxKind.InboxTrayEmoji, SyntaxKind.EqualsToken],
+        [SyntaxKind.LabelEmoji, SyntaxKind.LetKeyword],
     ]);
 
     const charCodeToTokenObj = new Map(
@@ -91,7 +100,8 @@ namespace ts {
             SyntaxKind.PersonShruggingEmoji,
             SyntaxKind.BackhandIndexPointingRightEmoji,
             SyntaxKind.PersonBowingEmoji,
-            SyntaxKind.HandshakeEmoji
+            SyntaxKind.HandshakeEmoji,
+            SyntaxKind.BackhandIndexPointingLeftEmoji,
         ]
     );
     /* @internal */
@@ -116,7 +126,8 @@ namespace ts {
         SyntaxKind.NextTrackButtonEmoji,
         SyntaxKind.HoleEmoji,
         SyntaxKind.YinYangEmoji,
-        SyntaxKind.DoubleExclamationEmoji
+        SyntaxKind.DoubleExclamationEmoji,
+        SyntaxKind.LabelEmoji,
     ]);
     /* @internal */
     export function isVariationEmojiToken(token: SyntaxKind): boolean {

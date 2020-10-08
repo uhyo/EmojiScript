@@ -7,7 +7,7 @@ A fork of [TypeScript](https://www.typescriptlang.org/) with Emoji support.
 
 ```ts
 📜fizzbuzz(n: 📊): 🕳️ {
-  💈(👉🏻i = 🍩; i⏮️n; i🎂) {
+  💈(🏷i 👈🏽 🍩; i⏮️n; i🎂) {
     🤔(i🍕⠏ 🤝 🍩) {
       console.log("FizzBuzz")🙇‍♂️
     } 🤷🤔(i🍕⠃ 🤝🏽 🍩) {
@@ -34,6 +34,7 @@ fizzbuzz(⠃⣨)🙇‍♀️
 | 📜 | `function` |
 | 💈 | `for` |
 | 👉 | `let` |
+| 🏷 | `let` |
 | 🈚 | `null` |
 | 🙇 | `;` |
 | ➕ | `+` |
@@ -41,6 +42,8 @@ fizzbuzz(⠃⣨)🙇‍♀️
 | ✖️ | `*` |
 | ➗️ | `/` |
 | 🍕️ | `%` |
+| 👈 | `=` |
+| 📥 | `=` |
 | 🤝 | `===` |
 | ⏮️ | `<=` |
 | ⏪ | `<` |

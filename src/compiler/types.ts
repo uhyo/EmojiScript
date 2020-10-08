@@ -130,6 +130,9 @@ namespace ts {
         YinYangEmoji,
         DoubleExclamationEmoji,
         JapaneseFreeOfChargeButtonEmoji,
+        BackhandIndexPointingLeftEmoji,
+        InboxTrayEmoji,
+        LabelEmoji,
 
 
         // Identifiers and PrivateIdentifiers
@@ -685,6 +688,9 @@ namespace ts {
         | SyntaxKind.YinYangEmoji
         | SyntaxKind.DoubleExclamationEmoji
         | SyntaxKind.JapaneseFreeOfChargeButtonEmoji
+        | SyntaxKind.BackhandIndexPointingLeftEmoji
+        | SyntaxKind.InboxTrayEmoji
+        | SyntaxKind.LabelEmoji
         ;
 
     /* @internal */
