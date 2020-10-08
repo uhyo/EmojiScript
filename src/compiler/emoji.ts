@@ -44,6 +44,8 @@ namespace ts {
         "\u262f": SyntaxKind.YinYangEmoji,
         // ‼
         "\u203c": SyntaxKind.DoubleExclamationEmoji,
+        // 🈚
+        "\u{1f21a}": SyntaxKind.JapaneseFreeOfChargeButtonEmoji,
     };
 
     /**
@@ -70,7 +72,8 @@ namespace ts {
         [SyntaxKind.HoleEmoji, SyntaxKind.VoidKeyword],
         [SyntaxKind.NewspaperEmoji, SyntaxKind.StringKeyword],
         [SyntaxKind.BarChartEmoji, SyntaxKind.NumberKeyword],
-        [SyntaxKind.YinYangEmoji, SyntaxKind.BooleanKeyword]
+        [SyntaxKind.YinYangEmoji, SyntaxKind.BooleanKeyword],
+        [SyntaxKind.JapaneseFreeOfChargeButtonEmoji, SyntaxKind.NullKeyword],
     ]);
 
     const charCodeToTokenObj = new Map(

@@ -129,6 +129,7 @@ namespace ts {
         BarChartEmoji,
         YinYangEmoji,
         DoubleExclamationEmoji,
+        JapaneseFreeOfChargeButtonEmoji,
 
 
         // Identifiers and PrivateIdentifiers
@@ -683,6 +684,7 @@ namespace ts {
         | SyntaxKind.BarChartEmoji
         | SyntaxKind.YinYangEmoji
         | SyntaxKind.DoubleExclamationEmoji
+        | SyntaxKind.JapaneseFreeOfChargeButtonEmoji
         ;
 
     /* @internal */
@@ -6163,6 +6165,8 @@ namespace ts {
 
         BrailleStart = 0x2800,
         BrailleEnd = 0x28FF,
+
+        DaughnutEmoji = 0x1F369,      // 🍩
     }
 
     export interface ModuleResolutionHost {

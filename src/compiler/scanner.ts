@@ -2054,6 +2054,11 @@ namespace ts {
                             error(Diagnostics.Invalid_character);
                         }
                         return token = SyntaxKind.PrivateIdentifier;
+                    case CharacterCodes.DaughnutEmoji:
+                        pos += 2;
+                        tokenValue = "0";
+                        tokenFlags |= TokenFlags.BrailleSpecifier;
+                        return token = SyntaxKind.NumericLiteral;
                     default: {
                         let emojiToken: EmojiSyntaxKind | undefined;
                         if (isIdentifierStart(ch, languageVersion)) {
